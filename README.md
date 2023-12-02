@@ -1,14 +1,35 @@
 # quick-pay Currency Converter
 
-Welcome to Quick Pay Currency Converter! Our goal is to provide a convenient and user-friendly online platform for customers to get an instant quote for their foreign exchange (FX) transfer needs. We've developed this platform in collaboration with a reliable company that specializes in processing forex transfers from Zimbabwe or South Africa to India.
+Welcome to QuickPay Money Transfer Currency Converter! Our goal is to provide a convenient and user-friendly online platform for customers to get an instant quote for their foreign exchange (FX) transfer needs. We've developed this platform in collaboration with a reliable company that specializes in processing forex transfers from Zimbabwe or South Africa to India.
+
+## Table of Contents
+
+1. [Introduction](#quick-pay-currency-converter)
+   - [Features](#features)
+  
+2. [Getting Started](#getting-started)
+   - [Usage](#usage)
+  
+3. [Technologies Used](#technologies-used)
+  
+4. [Screenshots](#screenshots)
+  
+5. [Contributing](#contributing)
+  
+6. [License](#license)
+  
+7. [Contact](#contact)
 
 ## Features
 
-Quick FX Rate Calculator offers the following features:
+QuickPay Money Transfer offers the following features:
 
 - **Live currency conversion**: The platform converts the two base currencies (ZAR and NAD) to Indian Rupees (INR) with a markup specified by our partner.
 - **Intuitive interface**: The website features a clean and modern design, making it easy for users to navigate and get instant quotes.
 - **Compatibility**: The platform is compatible with modern web browsers, ensuring a seamless experience for all users.
+- - Selection of payment options with corresponding withdrawal charges.
+- Responsive design for optimal viewing on various devices.
+- Help functionality to guide users through the conversion process.
 
 ## Getting Started
 
@@ -20,12 +41,11 @@ To use Quick Pay Converter, follow these steps:
 
 ## Technologies Used
 
-The Quick Pay Converte website is built using the following technologies:
+The Quick Pay Converter website is built using the following technologies:
 
 - HTML
 - CSS
 - JavaScript
-- Currency Converter API
 
 ## Screenshots
 
@@ -39,3 +59,8 @@ We welcome any contributions or suggestions to improve the platform. If you have
 ## License
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+## Contact
+Developer: Ownuh Melds
+Email: leonakokerai@outlook.com
+WhatsApp: +91 86 997 58198
