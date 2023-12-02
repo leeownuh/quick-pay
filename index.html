@@ -1,35 +1,65 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Currency Converter</title>
-    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,500,800" rel="stylesheet"> 
-    <link rel="stylesheet" type="text/css" href="main.css">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,500,800" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Montserrat', sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #F5F5F5;
+            margin: 0;
+        }
+
+        .converter {
+            text-align: center;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+
+        a {
+            display: inline-block;
+            width: 150px;
+            height: 20px;
+            padding: 10px;
+            border: none;
+            text-decoration: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            background-color: #032e5c;
+            color: white;
+            transition: background-color 0.3s;
+            margin: 10px;
+        }
+
+        a:hover {
+            background-color: #6b7477;
+        }
+
+        img {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin: 10px;
+        }
+    </style>
 </head>
+
 <body>
-    <div class="converter">
-        <img src="https://quickshare.samsungcloud.com/ls/public/v1/links/1700972172875LeK4mJp/contents/8a7c5c918c1211ee999322d4495b339c/resized/1280?signature=KBNoHMgUK6vfyaIajYqss8v8IObbKY2LR_eDRbY0UEijTzon8lt51O62VBgt32EvjXXU42YbUuPOjQai7f59-ISmztQVqc9wqEuP7xNH_N10dP7B2VXS04u0oqRfLIOlzdQVwb1r0fHOxlFB2JektA&storageType=file" alt="">
-        <h2>Currency Converter</h2>
-       <p>Choose the currency to convert from:</p>
-        <select id="fromCurrency">
-            <option value="USD">USD</option>
-            <option value="ZAR">Rands</option>
-        </select>
-        <p>Amount:</p>
-        <input type="number" id="amount" />
-        <button onclick="validateAmount()">Convert</button>
-        <p>Amount in Rupees:</p>
-        <div class="result">0</div>
-        <button id="helpBtn" class="btn" onclick="openHelp()"><strong>?</strong></button>
-        <br> <br>
-        <footer>
-            <p>Developed and Designed by <br><a href="https://wa.me/8699758198" target="_blank" style="text-decoration: underline; color: blue;">Ownuh Melds</a></p>
-           </footer>
+    <div class="details">
+        <div class="converter">
+            <p>Welcome to QuickPay Money Transfer</p>
+            <img src="logo.png" alt="Logo">
+            <p>Sender's Location:</p>
+            <a href="/zim.html">Zimbabwe</a>
+            <a href="/sa.html">South Africa</a>
+        </div>
     </div>
-    
-    
-        <script src="main.js"></script>
 </body>
 
 </html>

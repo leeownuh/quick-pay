@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QuickPay Money Transfer</title>
+    <!-- External CSS links -->
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,500,800" rel="stylesheet"> 
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+    <style>
+        /* Media queries for smaller screens */
+@media screen and (max-width: 600px) {
+    .converter {
+        min-width: 90%; /* Adjust the minimum width for smaller screens */
+    }
+
+    /* Add other styles for smaller screens as needed */
+}
+
+        /* General styling */
+        body {
+            font-family: 'Montserrat', sans-serif;
+            justify-content: center;
+            background-color: #F5F5F5;
+            margin: 0;
+        }
+
+        /* Container styling */
+        .converter {
+    max-width: 1200px; /* Adjust the maximum width as needed */
+    margin: 0 auto;
+    padding: 20px;
+    box-sizing: border-box;
+    justify-content: center;
+}
+
+        /* Button styling */
+        button {
+            width: 120px;
+            height: 40px;
+            margin: 10px;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            background-color: #032e5c;
+            color: white;
+            transition: background-color 0.3s;
+        }
+
+        button:hover {
+            background-color: #728288;
+        }
+
+        /* Input field styling */
+        input[type="number"] {
+            width: 190px;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            outline: none;
+        }
+         /* Image styling */
+        img {
+    width: 30px; 
+    height: 30px;
+    border-radius: 50%;
+    align-items: right;
+    object-fit: cover;
+    align-self: right;
+    max-width: 100%; 
+    border: 3px solid #032e5c; /* Add a border with 2px width and #888 color */
+}
+<style>
+    /* Container for the images and arrow */
+    .image-container {
+        display: flex;
+        align-items: center;
+    }
+
+    /* Style for each image */
+    .image-container img {
+        width: 70px;
+        height: 70px;
+        border-radius: 50%;
+        object-fit: cover;
+        margin: 7 10px; /* Adjust margin as needed */
+    }
+
+    /* Style for the arrow */
+    .arrow {
+        font-size: 24px;
+        margin: 0 10px; /* Adjust margin as needed */
+    }
+
+
+        /* Row and column styling */
+        .row {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 50px; /* Adjust the gap between columns */
+        }
+
+        .column {
+            flex-direction: column;
+        }
+.popup {
+position: fixed;
+z-index: 1;
+left: 0;
+top: 0;
+width: 100%;
+height: 100%;
+overflow: auto;
+background-color: rgba(0, 0, 0, 0.5);
+cursor: pointer;
+}
+
+.popup-content {
+background-color: #ffffff;
+margin: 15% auto;
+padding: 20px;
+border: 1px solid #888;
+width: 50%;
+cursor: pointer;position: absolute;    top: 50%;    left: 50%;    transform: translate(-50%, -50%);
+}
+
+h2 {
+color: #032e5c;
+font-size: medium;
+}
+
+.btn {
+  width: 50px; 
+  height: 50px;
+  background: #bcbac7;
+  font-size: 15px;
+  text-align: center;
+  border-radius: 50%;
+  cursor: pointer;
+  align-items:flex;
+}
+        table {min-width:150px;
+            max-width: 500px;}
+        /* Footer styling */
+        footer {
+            color: #032e5c;
+            padding: 10px 0;
+            font-size: 14px;
+            min-width: 150px;
+            max-width: 500px;
+            height: 30%;
+            border-radius: 5px;
+            
+        }
+        
+         /* Style for the amount label */
+         #amount-label {
+        font-size: 16px;
+        padding: 5px;
+        border-radius: 5px;
+        border-style: groove;
+        display: inline-block; /* Ensures the div does not take the full width */
+    }
+    </style>
+</head>
+<body>
+    <div class="details">
+        <div class="converter">
+            <div class="image-container">
+                <h2>QUICKPAY MONEY TRANSFER</h2>
+                <table>
+                    <tr>
+                        <td>
+                            <img src="zim.png" alt="Image 1">
+                            <p>Zimbabwe</p>
+                        </td>
+                        <td>
+                            <div class="arrow">➔</div>
+                        </td>
+                        <td>
+                            <img src="india.jpg" alt="Image 2">
+                            <p>India</p>
+                        </td>
+                    </tr>
+                    <table>
+            </div>
+            <!-- Payment options section -->
+            <h3>Select Payment Option:</h3>
+            <table>
+                <tr>
+                    
+                    <td>
+                        <input type="radio" id="ecocash" name="paymentOption" value="0.017"  onclick="showInterestRate('Ecocash')">
+                        <label for="ecocash">Ecocash</label>
+                    </td>
+                    <td>
+                        <input type="radio" id="inbucks" name="paymentOption" value="0.02"  onclick="showInterestRate('InBucks')">
+                        <label for="inbucks">InBucks</label>
+                    </td> 
+                    
+                </tr>
+                <tr>
+                    <td>
+                        <input type="radio" id="bank_transfer" name="paymentOption" value="0.025"  onclick="showInterestRate('Bank Transfer')">
+                        <label for="bank_transfer">Bank Transfer</label>
+                    </td>
+                    <td>
+                        <input type="radio" id="cash" name="paymentOption" value="0.00" checked  onclick="showInterestRate('Cash')">
+                        <label for="cash">Cash</label>
+                    </td>
+                    
+                </tr>
+                <tr>
+                    <td>
+                        <p>Withdrawal charge = <span id="interestRateDisplay">0.00</p>
+                    </td>    
+                </tr>
+            </table>
+
+            <!-- Amount input and submit button -->
+            <H3>Amount:</H3>
+            <table>
+            <tr>
+                <td>
+                    <input type="number" id="amount" value="100" min="100">
+                </td><td>
+                    <button onclick="calculateAmounts()">Submit</button>
+                </td>
+                
+                <td>
+                    <button id="helpBtn" class="btn" onclick="openHelp()"><strong>?</strong></button>
+                </td>
+                
+            </tr>
+        </table>
+            
+            <!-- Amount details section -->
+            <h3>Amount received by QuickPay: </h3>
+            <p>Amount received by QuickPay: $ <span id="receivedAmount">0.00 </span></p>
+            <h3>Amount received in India</h3>
+            <p>Amount in USD: $<span id="resultAmount">0.00</span></p>
+            <p>Equivalent Rupees: ₹<span id="equivalentAmount">0.00</span></p>
+           
+             <!-- Footer section -->
+    <footer>
+        <h4>Thank you for choosing QuickPay</h4>
+    </footer>
+
+        </div>
+    </div>
+
+   
+    <!-- JavaScript code -->
+    <script>
+        function calculateAmounts() {
+            var paymentOption = document.querySelector('input[name="paymentOption"]:checked');
+            var withdrawalCharge = parseFloat(paymentOption.value);
+            var amount = parseInt(document.getElementById('amount').value);
+            var receivedAmount = amount - (amount * withdrawalCharge);
+            var equivalentRupees = receivedAmount * 83.3; // Replace 83.3 with the appropriate exchange rate
+            
+
+            document.getElementById('receivedAmount').textContent = receivedAmount.toFixed(2);
+            document.getElementById('resultAmount').textContent = (receivedAmount - (receivedAmount * 0.06)).toFixed(2);
+            document.getElementById('equivalentAmount').textContent = equivalentRupees.toFixed(2);
+        }
+        function showInterestRate(paymentOption) {
+    // Get the selected radio button
+    var radioButton = document.querySelector('input[name="paymentOption"]:checked');
+
+    // Define interest rates for each payment option
+    var interestRate = parseFloat(radioButton.value);
+
+    // Display the interest rate information
+    const interestRateDisplay = document.getElementById('interestRateDisplay');
+    interestRateDisplay.textContent = interestRate;
+}
+
+        function openHelp() {
+    var popup = document.createElement('div');
+    popup.innerHTML =`
+    <div class="popup-content">
+            <span onclick="closeHelp()" class="close">&times;</span>
+            
+            <p>Here's how you can use the <strong>Quick Pay Currency Converter</strong>:</p>
+    
+    <ol>
+        <li>Select the <strong>payment option</strong> from the available choices. This determines the withdrawal charge applied to the amount.</li><br>
+        <li>Choose the <strong>currency you are converting from</strong>. This is the initial currency before conversion.</li><br>
+        <li>Enter the <strong>amount</strong> you want to convert in the 'Amount' input field.</li><br>
+        <li>Click on the <strong>'Submit'</strong> button to calculate the amount received by Quick Pay and the equivalent amount in India.</li><br>
+        <li>Review the displayed amounts and contact us on <a href="https://api.whatsapp.com/send?phone=51955081075&text=Hello%21%20I%20have%20a%20question%20about%20Quick%20Pay%20Money%20Transfer." target="_blank" style="text-decoration: underline; color: blue;">WhatsApp</a> for any assistance or further information.</li><br>
+        <p><strong>This website was developed and designed by<br><a href="https://wa.me/8699758198" target="_blank" style="text-decoration: underline;">Ownuh Melds</a></strong></p>
+    
+        
+    </ol>
+  </div>`;
+    popup.classList.add('popup');
+    document.body.appendChild(popup);
+}
+
+function closeHelp() {
+    var popup = document.querySelector('.popup');
+    if (popup) {
+        popup.parentNode.removeChild(popup);
+    }
+}
+
+document.querySelector('.popup-content .close').addEventListener('click', closeHelp);
+
+
+    </script>
+</body>
+</html>
