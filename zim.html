@@ -4,37 +4,30 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>QuickPay Money Transfer</title>
-    <!-- External CSS links -->
     <link href="https://fonts.googleapis.com/css?family=Montserrat:400,500,800" rel="stylesheet"> 
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
     <style>
-        /* Media queries for smaller screens */
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 600px) 
+{
     .converter {
         min-width: 90%; /* Adjust the minimum width for smaller screens */
     }
-
-    /* Add other styles for smaller screens as needed */
 }
-
-        /* General styling */
-        body {
+body {
             font-family: 'Montserrat', sans-serif;
             justify-content: center;
             background-color: #F5F5F5;
             margin: 0;
-        }
-
-        /* Container styling */
+        } 
         .converter {
-    max-width: 1200px; /* Adjust the maximum width as needed */
-    margin: 0 auto;
+    max-width: 1200px; 
+     margin: 0 auto;
     padding: 20px;
     box-sizing: border-box;
     justify-content: center;
 }
 
-        /* Button styling */
+
         button {
             width: 120px;
             height: 40px;
@@ -53,7 +46,7 @@
             background-color: #728288;
         }
 
-        /* Input field styling */
+        
         input[type="number"] {
             width: 190px;
             padding: 10px;
@@ -61,7 +54,6 @@
             border-radius: 5px;
             outline: none;
         }
-         /* Image styling */
         img {
     width: 30px; 
     height: 30px;
@@ -70,36 +62,27 @@
     object-fit: cover;
     align-self: right;
     max-width: 100%; 
-    border: 3px solid #032e5c; /* Add a border with 2px width and #888 color */
-}
+    border: 3px solid #032e5c; }
 <style>
-    /* Container for the images and arrow */
     .image-container {
         display: flex;
         align-items: center;
     }
-
-    /* Style for each image */
     .image-container img {
         width: 70px;
         height: 70px;
         border-radius: 50%;
         object-fit: cover;
-        margin: 7 10px; /* Adjust margin as needed */
+        margin: 7 10px; 
     }
-
-    /* Style for the arrow */
     .arrow {
         font-size: 24px;
-        margin: 0 10px; /* Adjust margin as needed */
+        margin: 0 10px; 
     }
-
-
-        /* Row and column styling */
         .row {
             display: flex;
             flex-wrap: wrap;
-            gap: 50px; /* Adjust the gap between columns */
+            gap: 50px; 
         }
 
         .column {
@@ -143,7 +126,6 @@ font-size: medium;
 }
         table {min-width:150px;
             max-width: 500px;}
-        /* Footer styling */
         footer {
             color: #032e5c;
             padding: 10px 0;
@@ -155,13 +137,12 @@ font-size: medium;
             
         }
         
-         /* Style for the amount label */
          #amount-label {
         font-size: 16px;
         padding: 5px;
         border-radius: 5px;
         border-style: groove;
-        display: inline-block; /* Ensures the div does not take the full width */
+        display: inline-block; 
     }
     </style>
 </head>
@@ -224,7 +205,7 @@ font-size: medium;
             <table>
             <tr>
                 <td>
-                    <input type="number" id="amount" value="100" min="100">
+                    <input type="number" id="amount"  min="0">
                 </td><td>
                     <button onclick="calculateAmounts()">Submit</button>
                 </td>
@@ -240,8 +221,8 @@ font-size: medium;
             <h3>Amount received by QuickPay: </h3>
             <p>Amount received by QuickPay: $ <span id="receivedAmount">0.00 </span></p>
             <h3>Amount received in India</h3>
-            <p>Amount in USD: $<span id="resultAmount">0.00</span></p>
-            <p>Equivalent Rupees: ₹<span id="equivalentAmount">0.00</span></p>
+            <p>In Rupees: ₹<span id="equivalentAmount">0.00</span></p>
+            <p>Equivalent USD: $<span id="resultAmount">0.00</span></p>
            
              <!-- Footer section -->
     <footer>
@@ -254,46 +235,85 @@ font-size: medium;
    
     <!-- JavaScript code -->
     <script>
-        function calculateAmounts() {
-            var paymentOption = document.querySelector('input[name="paymentOption"]:checked');
-            var withdrawalCharge = parseFloat(paymentOption.value);
-            var amount = parseInt(document.getElementById('amount').value);
-            var receivedAmount = amount - (amount * withdrawalCharge);
-            var equivalentRupees = receivedAmount * 83.3; // Replace 83.3 with the appropriate exchange rate
+        // function calculateAmounts() {
+        //     var paymentOption = document.querySelector('input[name="paymentOption"]:checked');
+        //     var withdrawalCharge = parseFloat(paymentOption.value);
+        //     var amount = parseInt(document.getElementById('amount').value);
+        //     var receivedAmount = amount - (amount * withdrawalCharge);
+        //     var equivalentRupees = receivedAmount * 83.3; 
             
 
-            document.getElementById('receivedAmount').textContent = receivedAmount.toFixed(2);
-            document.getElementById('resultAmount').textContent = (receivedAmount - (receivedAmount * 0.06)).toFixed(2);
-            document.getElementById('equivalentAmount').textContent = equivalentRupees.toFixed(2);
-        }
-        function showInterestRate(paymentOption) {
-    // Get the selected radio button
-    var radioButton = document.querySelector('input[name="paymentOption"]:checked');
-
-    // Define interest rates for each payment option
-    var interestRate = parseFloat(radioButton.value);
-
-    // Display the interest rate information
-    const interestRateDisplay = document.getElementById('interestRateDisplay');
-    interestRateDisplay.textContent = interestRate;
+        //     document.getElementById('receivedAmount').textContent = receivedAmount.toFixed(2);
+        //     document.getElementById('resultAmount').textContent = (receivedAmount - (receivedAmount * 0.06)).toFixed(2);
+        //     document.getElementById('equivalentAmount').textContent = equivalentRupees.toFixed(2);
+        // }
+        
+   function getPaymentOption() {
+    return document.querySelector('input[name="paymentOption"]:checked');
 }
 
-        function openHelp() {
-    var popup = document.createElement('div');
-    popup.innerHTML =`
-    <div class="popup-content">
-            <span onclick="closeHelp()" class="close">&times;</span>
+function getWithdrawalCharge() {
+    return parseFloat(getPaymentOption().value);
+}
+
+function getAmount() {
+    return parseInt(document.getElementById('amount').value);
+}
+
+function calculateOfficeAmount() {
+    var amount = getAmount();
+    var withdrawalCharge = getWithdrawalCharge();
+    return amount - (amount * withdrawalCharge);
+}
+
+function calculateIndiaAmount(officeAmount) {
+    return officeAmount * 83;
+}
+
+function calculateInterest(indiaAmount) {
+    return indiaAmount * 0.06;
+}
+
+function calculateRupees(indiaAmount, interest) {
+    return indiaAmount - interest;
+}
+
+function calculateUSD(rupees) {
+    return rupees / 83;
+}
+
+function calculateAmounts() {
+    var officeAmount = calculateOfficeAmount();
+    var indiaAmount = calculateIndiaAmount(officeAmount);
+    var interest = calculateInterest(indiaAmount);
+    var rupees = calculateRupees(indiaAmount, interest);
+    var usd = calculateUSD(rupees);
+
+    document.getElementById('receivedAmount').textContent = officeAmount.toFixed(2);
+    document.getElementById('resultAmount').textContent = usd.toFixed(2);
+    document.getElementById('equivalentAmount').textContent = rupees.toFixed(2);
+}
+        function showInterestRate(paymentOption) {
+            var radioButton = document.querySelector('input[name="paymentOption"]:checked'); 
+            var interestRate = parseFloat(radioButton.value);
+            const interestRateDisplay = document.getElementById('interestRateDisplay');
+            interestRateDisplay.textContent = (interestRate*100).toFixed(2) + '%';
+        }
             
-            <p>Here's how you can use the <strong>Quick Pay Currency Converter</strong>:</p>
+        function openHelp() {
+            var popup = document.createElement('div');
+            popup.innerHTML =` <div class="popup-content">
+            
+                 <span onclick="closeHelp()" class="close">&times;</span>
+                  <p>Here's how you can use the <strong>Quick Pay Currency Converter</strong>:</p>
     
     <ol>
         <li>Select the <strong>payment option</strong> from the available choices. This determines the withdrawal charge applied to the amount.</li><br>
+        <li>Choose the <strong>currency you are converting from</strong>. This is the initial currency before conversion.</li><br>
         <li>Enter the <strong>amount</strong> you want to convert in the 'Amount' input field.</li><br>
-        <li>Click on the <strong>'Submit'</strong> button to calculate the amount received by Quick Pay and the equivalent amount in India after all charges.</li><br>
+        <li>Click on the <strong>'Submit'</strong> button to calculate the amount received by Quick Pay and the equivalent amount in India.</li><br>
         <li>Review the displayed amounts and contact us on <a href="https://api.whatsapp.com/send?phone=51955081075&text=Hello%21%20I%20have%20a%20question%20about%20Quick%20Pay%20Money%20Transfer." target="_blank" style="text-decoration: underline; color: blue;">WhatsApp</a> for any assistance or further information.</li><br>
         <p><strong>This website was developed and designed by<br><a href="https://wa.me/8699758198" target="_blank" style="text-decoration: underline;">Ownuh Melds</a></strong></p>
-    
-        
     </ol>
   </div>`;
     popup.classList.add('popup');
@@ -309,7 +329,6 @@ function closeHelp() {
 
 document.querySelector('.popup-content .close').addEventListener('click', closeHelp);
 
-
-    </script>
+</script>
 </body>
 </html>
