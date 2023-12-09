@@ -35,7 +35,7 @@ QuickPay Money Transfer offers the following features:
 
 To use Quick Pay Converter, follow these steps:
 
-1. Open your preferred web browser and navigate to the website: [https://www.quick-pay.github.io](https://www.quickpay.github.io)
+1. Open your preferred web browser and navigate to the website: [https://www.quick-pay.github.io](https://quick-pay.pages.dev)
 2. Enter the required details, such as the amount you want to transfer, your preferred currency conversion, and your contact information.
 3. Click the "Convert" button to generate an instant quote for your transfer.
 
