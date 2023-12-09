@@ -24,7 +24,7 @@ Welcome to QuickPay Money Transfer Currency Converter! Our goal is to provide a 
 
 QuickPay Money Transfer offers the following features:
 
-- **Live currency conversion**: The platform converts the two base currencies (ZAR and NAD) to Indian Rupees (INR) with a markup specified by our partner.
+- **Live currency conversion**: The platform converts the two base currencies (ZAR and USD) to Indian Rupees (INR) with a markup specified by our partner.
 - **Intuitive interface**: The website features a clean and modern design, making it easy for users to navigate and get instant quotes.
 - **Compatibility**: The platform is compatible with modern web browsers, ensuring a seamless experience for all users.
 - - Selection of payment options with corresponding withdrawal charges.
