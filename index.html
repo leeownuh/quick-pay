@@ -1,65 +1,91 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,500,800" rel="stylesheet">
-    <style>
-        body {
-            font-family: 'Montserrat', sans-serif;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            background-color: #F5F5F5;
-            margin: 0;
-        }
-
-        .converter {
-            text-align: center;
-            padding: 20px;
-            box-sizing: border-box;
-        }
-
-        a {
-            display: inline-block;
-            width: 150px;
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QuickPay Money Transfer</title>
+    <script src="script.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,500,800" rel="stylesheet"> 
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="main.css">
+</head>
+<style>
+    a {
+        width: 220px;
             height: 20px;
+            margin: 20px;
             padding: 10px;
             border: none;
-            text-decoration: none;
             border-radius: 5px;
             cursor: pointer;
             font-size: 16px;
             background-color: #032e5c;
             color: white;
             transition: background-color 0.3s;
-            margin: 10px;
-        }
+            text-decoration: none;
+            display:list-item; 
+        
+    }
 
-        a:hover {
-            background-color: #6b7477;
-        }
+    a:hover {
+        background-color: #6b7477;
+    }
 
-        img {
-            width: 100px;
-            height: 100px;
-            border-radius: 50%;
-            object-fit: cover;
-            margin: 10px;
-        }
-    </style>
-</head>
+    img {
+        width: 100px;
+        height: 100px;
+        border-radius: 50%;
+        object-fit: cover;
+        margin: 10px;
+    }
+    .centered-table {
+        margin: auto;
+    }
 
+    /* Center the text horizontally and vertically in each cell */
+    .centered-table td {
+        text-align: center;
+        vertical-align: middle;
+    }
+                h2 {
+        color: #010305;
+        font-size: medium;
+    }
+</style>
 <body>
     <div class="details">
         <div class="converter">
-            <p>Welcome to QuickPay Money Transfer</p>
-            <img src="logo.png" alt="Logo">
-            <p>Sender's Location:</p>
-            <a href="/zim.html">Zimbabwe</a>
-            <a href="/sa.html">South Africa</a>
+            
+                <table class="centered-table">
+                    <tr>
+                        <td>  
+                            <p>Welcome to QuickPay Money Transfer</p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td> 
+                            <div class="image-container"><img src="logo.png" alt="Logo"></div> 
+                            
+                        </td>
+                    </tr>
+                <tr>
+                    <td>  
+                        <p>Select sender's Location:</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <a href="/zim.html">Zimbabwe</a>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                       
+                        <a href="/sa.html">South Africa</a>
+                    </td> 
+                </tr>
+            </table>
         </div>
     </div>
 </body>
-
 </html>
