@@ -49,8 +49,8 @@ The Quick Pay Converter website is built using the following technologies:
 
 ## Screenshots
 
-![Welcome page](./screenshots/welcome.png)
-![Get quote page](./screenshots/get-quote.png)
+![Welcome page](./index.png)
+![Get quote page](./zimshot.png)
 
 ## Contributing
 
