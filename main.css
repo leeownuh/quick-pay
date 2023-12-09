@@ -1,0 +1,137 @@
+@media screen and (max-width: 600px) 
+{
+    .converter {
+        min-width: 90%; /* Adjust the minimum width for smaller screens */
+    }
+}
+body {
+            font-family: 'Montserrat', sans-serif;
+            justify-content: center;
+            background-color: #F5F5F5;
+            margin: 0;
+        } 
+        .converter {
+    max-width: 1200px; 
+     margin: 0 auto;
+    padding: 20px;
+    box-sizing: border-box;
+    justify-content: center;
+}
+
+
+        button {
+            width: 120px;
+            height: 40px;
+            margin: 10px;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            background-color: #032e5c;
+            color: white;
+            transition: background-color 0.3s;
+        }
+
+        button:hover {
+            background-color: #728288;
+        }
+
+        
+        input[type="number"] {
+            width: 190px;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            outline: none;
+        }
+        img {
+    width: 30px; 
+    height: 30px;
+    border-radius: 50%;
+    align-items: right;
+    object-fit: cover;
+    align-self: right;
+    max-width: 100%; 
+    border: 3px solid #032e5c; }
+<style>
+    .image-container {
+        display: flex;
+        align-items: center;
+    }
+    .image-container img {
+        width: 70px;
+        height: 70px;
+        border-radius: 50%;
+        object-fit: cover;
+        margin: 7 10px; 
+    }
+    .arrow {
+        font-size: 24px;
+        margin: 0 10px; 
+    }
+        .row {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 50px; 
+        }
+
+        .column {
+            flex-direction: column;
+        }
+.popup {
+position: fixed;
+z-index: 1;
+left: 0;
+top: 0;
+width: 100%;
+height: 100%;
+overflow: auto;
+background-color: rgba(0, 0, 0, 0.5);
+cursor: pointer;
+}
+
+.popup-content {
+background-color: #ffffff;
+margin: 15% auto;
+padding: 20px;
+border: 1px solid #888;
+width: 50%;
+cursor: pointer;position: absolute;    top: 50%;    left: 50%;    transform: translate(-50%, -50%);
+}
+
+h2 {
+color: #032e5c;
+font-size: medium;
+}
+
+.btn {
+  width: 50px; 
+  height: 50px;
+  background: #bcbac7;
+  font-size: 15px;
+  text-align: center;
+  border-radius: 50%;
+  cursor: pointer;
+  align-items:flex;
+}
+        table {min-width:150px;
+            max-width: 500px;}
+        footer {
+            color: #032e5c;
+            padding: 10px 0;
+            font-size: 14px;
+            min-width: 150px;
+            max-width: 500px;
+            height: 30%;
+            border-radius: 5px;
+            
+        }
+        
+         #amount-label {
+        font-size: 16px;
+        padding: 5px;
+        border-radius: 5px;
+        border-style: groove;
+        display: inline-block; 
+    }
